@@ -36,7 +36,7 @@
 
 
 
-   <?php include __DIR__ . '/php/footer.php'; ?>
+   <?php include 'footer.php'; ?>
 
 
 
@@ -333,13 +333,9 @@
      
       
 
-      <?php include __DIR__ . '/php/form.php'; ?>
+      <?php include 'form.php'; ?>
 
-
-
-
-
-      <?php include __DIR__ . '/php/footer.php'; ?>
+      <?php include 'footer.php'; ?>
 
 
 

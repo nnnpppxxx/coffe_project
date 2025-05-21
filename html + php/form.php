@@ -1,4 +1,4 @@
-<form action="php/form_handler.php" method="POST">
+<form action="form_handler.php" method="POST">
     <div class="contact_section layout_padding">
         <div class="container">
             <h1 class="contact_text">Contact Us</h1>
@@ -23,7 +23,7 @@
                                 <textarea class="massage-bt" placeholder="Message" rows="5" id="comment" name="message"></textarea>
                             </div>
                             <div class="send_btn">
-                                <button type="submit" class="main_bt">SEND</button>
+                                <button type="submit" style="background: #4CAF50; color: white; border: none; padding: 10px 20px; border-radius: 5px;">SEND</button>
                             </div>
                         </div>
                     </div>
