@@ -1,12 +1,17 @@
 <?php
 require_once 'config.php';
 require_once '../_inc/MenuManager.php';
-session_start();
+
 
 // на словацкий язык
 setlocale(LC_ALL, 'sk_SK.utf8');
 
+$auth = new Auth($pdo);
 
+if (!isset($_SESSION['admin_logged_in'])) {
+    header('Location: login.php');
+    exit;
+}
 $menu = new MenuManager($pdo);
 
 // обработка формы

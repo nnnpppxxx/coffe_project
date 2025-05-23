@@ -35,12 +35,9 @@ if (!$auth->check()) {
             <i class="fas fa-coffee"></i> Kaviareň Admin
         </div>
         <div class="sidebar-menu">
-            <a href="dashboard.php" class="active"><i class="fas fa-tachometer-alt"></i> Prehľad</a>
+            <a href="../index.php" class="active"><i class="fas fa-home"></i> Home</a>
             <a href="menu.php"><i class="fas fa-utensils"></i> Správa menu</a>
-            <a href="#"><i class="fas fa-receipt"></i> Objednávky</a>
-            <a href="#"><i class="fas fa-users"></i> Personál</a>
-            <a href="#"><i class="fas fa-chart-bar"></i> Štatistiky</a>
-            <a href="#"><i class="fas fa-cog"></i> Nastavenia</a>
+            
             <a href="?logout"><i class="fas fa-sign-out-alt"></i> Odhlásiť sa</a>
         </div>
     </div>

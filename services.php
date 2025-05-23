@@ -14,8 +14,8 @@
                   <div class="col-lg-4 col-sm-12 col-md-4">
                      <div class="box_main active">
                         <div class="house_icon">
-                           <img src="images/icon1.png" class="image_1">
-                           <img src="images/icon1.png" class="image_2">
+                           <img src="assets/images/icon1.png" class="image_1">
+                           <img src="assets/images/icon1.png" class="image_2">
                         </div>
                         <h3 class="decorate_text">Original Coffee</h3>
                         <p class="tation_text">Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
@@ -25,8 +25,8 @@
                   <div class="col-lg-4 col-sm-12 col-md-4">
                      <div class="box_main">
                         <div class="house_icon">
-                           <img src="images/icon2.png" class="image_1">
-                           <img src="images/icon2.png" class="image_2">
+                           <img src="assets/images/icon2.png" class="image_1">
+                           <img src="assets/images/icon2.png" class="image_2">
                         </div>
                         <h3 class="decorate_text">20 Coffee Flavors</h3>
                         <p class="tation_text">Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
@@ -36,8 +36,8 @@
                   <div class="col-lg-4 col-sm-12 col-md-4">
                      <div class="box_main">
                         <div class="house_icon">
-                           <img src="images/icon3.png" class="image_1">
-                           <img src="images/icon3.png" class="image_2">
+                           <img src="assets/images/icon3.png" class="image_1">
+                           <img src="assets/images/icon3.png" class="image_2">
                         </div>
                         <h3 class="decorate_text">Pleasant Abient</h3>
                         <p class="tation_text">Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea </p>
