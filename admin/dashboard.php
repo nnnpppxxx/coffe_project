@@ -1,15 +1,21 @@
 <?php
 require_once 'config.php';
 
+$auth = new Auth($pdo);
+
 if (!isset($_SESSION['admin_logged_in'])) {
     header('Location: login.php');
     exit;
 }
 if (isset($_GET['logout'])) {
-    session_destroy();
+    $auth->logout();
     header('Location: login.php');
     exit;
 }
+if (!$auth->check()) {
+    header('Location: login.php');
+    exit;
+}   
 ?>
 
 <!DOCTYPE html>

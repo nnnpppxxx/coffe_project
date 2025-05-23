@@ -1,19 +1,20 @@
 <?php
 require_once 'config.php';
+require_once '../_inc/Auth.php';
 
-// Временный фикс для проверки (удалите после отладки!)
-if (isset($_POST['username']) && $_POST['username'] === 'admin' && $_POST['password'] === 'admin123') {
-    $_SESSION['admin_logged_in'] = true;
-    $_SESSION['admin_username'] = 'admin';
-    header('Location: dashboard.php');
-    exit;
-} else {
-    // Отладочный вывод
-    error_log("Login attempt: username=" . ($_POST['username'] ?? '') . ", password=" . ($_POST['password'] ?? ''));
-    $error = "chyba";
+$auth = new Auth($pdo);
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($auth->login($_POST['username'], $_POST['password'])) {
+        header('Location: dashboard.php');
+        exit;
+    } else {
+        $error = "Nesprávne prihlasovacie údaje.";
+    }
 }
 
-if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true) {
+if ($auth->check()) {
     header('Location: dashboard.php');
     exit;
 }

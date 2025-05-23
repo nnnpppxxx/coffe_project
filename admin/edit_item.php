@@ -1,13 +1,13 @@
 <?php
 require_once 'config.php';
+require_once '../_inc/MenuItem.php';
 
-if (!isset($_SESSION['admin_logged_in'])) {
-    header('Location: login.php');
-    exit;
-}
 
-$id = $_GET['id'] ?? 0;
-$item = $pdo->query("SELECT * FROM menu_items WHERE id = $id")->fetch();
+$menuItem = new MenuItem($pdo);
+$item = $menuItem->getById((int)($_GET['id'] ?? 0));
+
+
+
 
 if (!$item) {
     header('Location: menu.php');
@@ -18,9 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim($_POST['name']);
     $price = (float)str_replace(',', '.', $_POST['price']);
     
-    $stmt = $pdo->prepare("UPDATE menu_items SET name = ?, price = ? WHERE id = ?");
-    $stmt->execute([$name, $price, $id]);
-    
+    $menuItem->update((int)$item['id'], $name, $price);
     $_SESSION['success'] = "Nápoj bol úspešne aktualizovaný!";
     header('Location: menu.php');
     exit;

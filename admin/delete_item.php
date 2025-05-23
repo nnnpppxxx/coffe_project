@@ -4,15 +4,17 @@ if (!isset($_SESSION['admin_logged_in'])) {
     header('Location: login.php');
     exit;
 }
-$id = $_GET['id'] ?? 0;
-$item = $pdo->query("SELECT * FROM menu_items WHERE id = $id")->fetch();
+$id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+
+$menu = new MenuItem($db);
+$item = $menu->getById($id);
+
 if (!$item) {
     $_SESSION['error'] = "Nápoj nebol nájdený!";
     header('Location: menu.php');
     exit;
 }
-$pdo->query("DELETE FROM menu_items WHERE id = $id");
+$menu->delete($id);
 $_SESSION['success'] = "Nápoj '{$item['name']}' bol úspešne odstránený!";
 header('Location: menu.php');
 exit;
-?>

@@ -1,26 +1,30 @@
 <?php
 require_once 'config.php';
+require_once '../_inc/MenuManager.php';
+session_start();
 
 // на словацкий язык
 setlocale(LC_ALL, 'sk_SK.utf8');
+
+
+$menu = new MenuManager($pdo);
 
 // обработка формы
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim($_POST['item_name']);
     $price = (float)str_replace(',', '.', $_POST['price']);
-    
-    try {
-        $stmt = $pdo->prepare("INSERT INTO menu_items (name, price) VALUES (?, ?)");
-        $stmt->execute([$name, $price]);
-        $_SESSION['success'] = "Nápoj bol úspešne pridaný!";
+
+    if ($menu->addItem($name, $price)) {
+        $_SESSION['success'] = $menu->success;
         header('Location: menu.php');
         exit;
-    } catch (PDOException $e) {
-        $error = "Chyba pri pridávaní: " . $e->getMessage();
+    } else {
+        $error = $menu->error;
     }
 }
+
 // зискание актуального меню
-$menuItems = $pdo->query("SELECT * FROM menu_items ORDER BY name")->fetchAll();
+$menuItems = $menu->getItems();
 ?>
 
 
