@@ -5,7 +5,7 @@ class Auth {
 
     public function __construct(PDO $pdo) {
         $this->pdo = $pdo;
-        session_start();
+        
     }
 
     public function login(string $username, string $password): bool {

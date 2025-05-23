@@ -9,11 +9,11 @@ define('DB_PASS', '');
 session_start();
 
 //подключение классов
-require_once __DIR__ . '/_inc/Database.php';
-require_once __DIR__ . '/_inc/MenuItem.php';
-require_once __DIR__ . '/_inc/auth.php';
+require_once '../_inc/database.php';
+require_once '../_inc/MenuItem.php';
+require_once '../_inc/auth.php';
 // подключение к базе
-$db = Database::getInstance()->getConnection();
+$pdo = Database::getInstance()->getConnection();
 
 //включаем ошибки для отладки
 ini_set('display_errors', 1);

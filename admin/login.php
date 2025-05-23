@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-require_once '../_inc/Auth.php';
+require_once '../_inc/auth.php';
 
 $auth = new Auth($pdo);
 
