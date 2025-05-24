@@ -53,6 +53,7 @@ if ($auth->check()) {
                         <input type="password" class="form-control" id="password" name="password" required>
                     </div>
                     <button type="submit" class="btn btn-purple w-100"><i class="fas fa-sign-in-alt"></i> Prihlásiť sa</button>
+                    <a href="regAdmin.php" class="btn btn-register w-100"><i class="fas fa-user-plus"></i> Registrovať sa</a>
                 </form>
             </div>
         </div>

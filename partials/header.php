@@ -19,8 +19,6 @@
       <link rel="stylesheet" type="text/css" href="assets/css/style.css">
       <!-- Responsive-->
       <link rel="stylesheet" href="assets/css/responsive.css">
-      <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
       <!-- Tweaks for older IEs-->
