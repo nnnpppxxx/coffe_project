@@ -19,7 +19,7 @@ class MenuItem {
     }
     
     public function delete(int $id): bool {
-        $stmt = $this->db->prepare("DELETE FROM menu_items WHERE id = ?");
+        $stmt = $this->pdo->prepare("DELETE FROM menu_items WHERE id = ?");
         return $stmt->execute([$id]);
     }
 }

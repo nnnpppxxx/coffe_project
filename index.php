@@ -75,10 +75,10 @@
       </div>
       <!-- about section end -->
       
-      <?php $included = true;  // stoping include footer and header
+      <?php $included = true;  // stops include footer and header
       include "gallery.php" ?>
 
-      
+
       <!-- services section start -->
       <div class="services_section layout_padding">
          <div class="container">

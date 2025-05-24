@@ -61,7 +61,7 @@ CREATE TABLE `menu_items` (
 --
 
 INSERT INTO `menu_items` (`id`, `name`, `price`, `created_at`) VALUES
-(5, 'Cappucino', 2.50, '2025-05-23 18:06:20'),
+(5, 'Cappuccino', 2.50, '2025-05-23 18:06:20'),
 (6, 'Latte', 2.00, '2025-05-23 18:06:42');
 
 --

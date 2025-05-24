@@ -1183,3 +1183,63 @@ a:hover {
     font-size: 0.9rem;
 }
 
+
+
+.menu-page-styles {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+}
+
+.menu-page-styles .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-page-styles .card-header {
+    background-color: #6c757d;
+    color: white;
+    border-radius: 10px 10px 0 0 !important;
+}
+
+.menu-page-styles .product-card {
+    transition: transform 0.2s;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.menu-page-styles .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.menu-page-styles .product-img {
+    height: 180px;
+    object-fit: cover;
+}
+
+.menu-page-styles .price-badge {
+    font-size: 1.1rem;
+    background-color: #f8f9fa;
+    color: #212529;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.menu-page-styles .section-title {
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+.menu-page-styles .section-title:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background: #6c757d;
+}
+

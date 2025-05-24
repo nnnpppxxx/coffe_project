@@ -16,7 +16,11 @@ if (!$auth->check()) {
     header('Location: login.php');
     exit;
 }   
+$pocetNapoj = $pdo->query("SELECT COUNT(*) FROM menu_items")->fetchColumn();
+
+$posledneNapoje = $pdo->query("SELECT name, price, created_at FROM menu_items ORDER BY created_at DESC LIMIT 5")->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="sk">
@@ -24,12 +28,12 @@ if (!$auth->check()) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - Kaviareň</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
 </head>
-<body>
+<body class="admin-panel-styles">
     <div class="sidebar">
         <div class="sidebar-brand">
             <i class="fas fa-coffee"></i> Kaviareň Admin
@@ -43,50 +47,43 @@ if (!$auth->check()) {
     </div>
 
     <div class="main-content">
-        <h2 class="mb-4">Vitajte, <?= $_SESSION['admin_username'] ?>!</h2>
+        <h2 class="mb-4">Vitajte, <?php echo $_SESSION['admin_username'] ?>!</h2>
         
         <div class="row">
             <div class="col-md-4">
                 <div class="card stat-card">
                     <i class="fas fa-coffee"></i>
-                    <div class="number">24</div>
+                    <div class="number"><?php echo $pocetNapoj; ?></div>
                     <div class="label">Dostupné nápoje</div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card stat-card">
-                    <i class="fas fa-receipt"></i>
-                    <div class="number">156</div>
-                    <div class="label">Dnešné objednávky</div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card stat-card">
-                    <i class="fas fa-euro-sign"></i>
-                    <div class="number">1,248.50 €</div>
-                    <div class="label">Dnešný príjem</div>
-                </div>
-            </div>
+
         </div>
 
-        <div class="card">
+        <div class="card mt-4">
             <div class="card-header">
-                <h5 class="mb-0"><i class="fas fa-bell"></i> Posledné aktivity</h5>
+                <h5 class="mb-0"><i class="fas fa-clock"></i> Najnovšie pridané nápoje</h5>
             </div>
             <div class="card-body">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span>Nový nápoj "Latte Macchiato" bol pridaný</span>
-                        <small class="text-muted">Pred 15 minútami</small>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span>Objednávka #245 bola dokončená</span>
-                        <small class="text-muted">Pred 27 minútami</small>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span>Nový zamestnanec bol pridaný</span>
-                        <small class="text-muted">Pred 2 hodinami</small>
-                    </li>
+                    <?php if (!empty($posledneNapoje)): ?>
+                        <?php foreach ($posledneNapoje as $napoj): ?>
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="drink-item">
+                                        <strong><?php echo htmlspecialchars($napoj['name']) ?></strong>
+                                        <span class="drink-price"><?php echo number_format($napoj['price'], 2) ?> €</span>
+                                    </div>
+                                    <small class="text-muted">
+                                        <?php echo date('d.m.Y H:i', strtotime($napoj['created_at'])) ?>
+                                    </small>
+                                </div>
+                            </li>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <li class="list-group-item">
+                            Žiadne nápoje na zobrazenie
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
