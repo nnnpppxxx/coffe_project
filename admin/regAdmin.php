@@ -3,10 +3,6 @@ require_once 'config.php';
 
 $auth = new Auth($pdo);
 
-if (!isset($_SESSION['admin_logged_in'])) {
-    header('Location: login.php');
-    exit;
-}
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -33,6 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <a href="../index.php" class="btn btn-secondary back-button">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
     <div class="container">
         <h2>Add Admin</h2>
 

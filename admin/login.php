@@ -31,6 +31,9 @@ if ($auth->check()) {
 
 </head>
 <body class="login-page">
+    <a href="../index.php" class="btn btn-secondary back-button">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
     <div class="container">
         <div class="card login-card">
             <div class="card-header login-header">
