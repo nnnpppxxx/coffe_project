@@ -49,7 +49,7 @@
         }
         ?>
 
-        <div class="seemore_bt"><a href="#">See More</a></div>
+        <div class="seemore_bt"><a href="gallery.php">See More</a></div>
     </div>
 </div>
 <!-- gallery section end -->
