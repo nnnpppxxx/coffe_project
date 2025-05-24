@@ -10,7 +10,7 @@ session_start();
 
 //подключение классов
 require_once '_inc/database.php';
-require_once '_inc/MenuItem.php';
+require_once '_inc/menuItem.php';
 require_once '_inc/auth.php';
 // подключение к базе
 $pdo = Database::getInstance()->getConnection();

@@ -1,4 +1,4 @@
-<form action="form_handler.php" method="POST">
+<form action="partials/form_handler.php" method="POST">
     <div class="contact_section layout_padding">
         <div class="container">
             <h1 class="contact_text">Contact Us</h1>

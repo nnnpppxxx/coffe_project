@@ -1,0 +1,44 @@
+.stat-card {
+    transition: transform 0.3s;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+}
+.stat-card i {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #6c757d;
+}
+.stat-card .number {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.stat-card .label {
+    color: #6c757d;
+    margin-top: 10px;
+}
+.sidebar {
+    background-color: #343a40;
+    color: white;
+}
+.sidebar-menu a {
+    color: white;
+    padding: 10px 15px;
+    display: block;
+}
+.sidebar-menu a:hover {
+    background-color: #495057;
+    text-decoration: none;
+}
+.sidebar-menu a.active {
+    background-color: #007bff;
+}
+.drink-item {
+    border-left: 3px solid #6c757d;
+    padding-left: 10px;
+}
+.drink-price {
+    color: #28a745;
+    font-weight: bold;
+    margin-left: 10px;
+}

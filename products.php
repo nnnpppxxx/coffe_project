@@ -1,10 +1,10 @@
 <?php
 require_once 'admin/config_public.php';
-require_once '_inc/MenuManager.php';    
+ 
 
 setlocale(LC_ALL, 'sk_SK.utf8');
 
-$menu = new MenuManager($pdo);
+$menu = new MenuItem($pdo);
 $menuItems = $menu->getItems();
 ?>
 

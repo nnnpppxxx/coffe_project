@@ -6,7 +6,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
 }
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
-$menu = new MenuItem($db);
+$menu = new MenuItem($pdo);
 $item = $menu->getById($id);
 
 if (!$item) {

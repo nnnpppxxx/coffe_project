@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-require_once '../_inc/MenuManager.php';
+
 
 
 // на словацкий язык
@@ -12,7 +12,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
     header('Location: login.php');
     exit;
 }
-$menu = new MenuManager($pdo);
+$menu = new MenuItem($pdo);
 
 // обработка формы
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
